@@ -36,7 +36,8 @@ const MedicineCard = ({
   onAddToCalc, 
   onClick, 
   searchQuery,
-  t 
+  t,
+  language
 }) => {
   return (
     <div 
@@ -70,6 +71,12 @@ const MedicineCard = ({
           </span>
           <span className="med-group-tag" title={medicine.group}>
             <HighlightText text={medicine.group} query={searchQuery} />
+          </span>
+        </div>
+        
+        <div className="med-meta-row" style={{ marginTop: "6px", borderTop: "1px dashed var(--border)", paddingTop: "6px" }}>
+          <span style={{ fontSize: "0.75rem", fontWeight: "600", color: "var(--primary)" }} title="Clinical Usecase">
+            🩺 {language === "hi" ? medicine.usecaseHindi : medicine.usecase}
           </span>
         </div>
       </div>

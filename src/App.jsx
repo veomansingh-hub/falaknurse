@@ -843,6 +843,7 @@ function App() {
                         onClick={() => setSelectedMedicine(med)}
                         searchQuery={searchQuery}
                         t={t}
+                        language={language}
                       />
                     ))
                   )}
@@ -1295,6 +1296,7 @@ function App() {
           onAddToCalc={handleAddToCalculator}
           isAddedToCalc={calculator.some(c => c.srNo === selectedMedicine.srNo)}
           t={t}
+          language={language}
         />
       )}
     </>

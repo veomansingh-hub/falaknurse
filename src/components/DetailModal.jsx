@@ -1,7 +1,7 @@
 import React from "react";
 import { X, ShieldAlert, BadgeInfo, Scale, ShoppingCart } from "lucide-react";
 
-const DetailModal = ({ medicine, onClose, onAddToCalc, isAddedToCalc, t }) => {
+const DetailModal = ({ medicine, onClose, onAddToCalc, isAddedToCalc, t, language }) => {
   if (!medicine) return null;
 
   // Approximate branded medicine price calculation (Generic is ~15%-25% of branded market alternatives)
@@ -72,8 +72,8 @@ const DetailModal = ({ medicine, onClose, onAddToCalc, isAddedToCalc, t }) => {
             <div className="modal-field-lbl" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
               <BadgeInfo size={14} /> {t("indicLbl")}
             </div>
-            <p style={{ fontSize: "0.85rem", marginTop: "4px", marginBottom: 0 }}>
-              {t("indicVal")}
+            <p style={{ fontSize: "0.85rem", marginTop: "4px", marginBottom: 0, fontWeight: "600", color: "var(--text)" }}>
+              {language === "hi" ? medicine.usecaseHindi : medicine.usecase}
             </p>
           </div>
 
